@@ -1,0 +1,57 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "metadata": {
+        "name": "ap-outlier-detection",
+        "namespace": "default",
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
+    },
+    "spec": {
+        "name": "ap-outlier-detection",
+        "predictors": [
+            {
+                "name": "default",
+                "graph": {
+                    "name": "ap-outlier-detection-container",
+                    "implementation": "TENSORFLOW_SERVER",
+                    "endpoint": {
+                        "type": "REST"
+                    },
+                    "modelUri": "gs://seldon-models/tfserving/cifar10/resnet32",
+                    "logger": {
+                        "url": "http://default-broker",
+                        "mode": "all"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2020-10-19T13:26:32Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "ap-outlier-detection-container",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 100
+            }
+        ],
+        "annotations": {
+            "seldon.io/engine-seldon-log-messages-externally": "true"
+        },
+        "protocol": "tensorflow",
+        "transport": "rest"
+    },
+    "status": {}
+}
