@@ -6,6 +6,7 @@
         "namespace": "default",
         "creationTimestamp": null,
         "labels": {
+            "app.kubernetes.io/instance": "seldon-gitops-default",
             "fluentd": "true"
         }
     },
@@ -17,13 +18,13 @@
                 "graph": {
                     "name": "tc-sklearn-test-container",
                     "type": "MODEL",
-                    "implementation": "SKLEARN_SERVER",
+                    "implementation": "XGBOOST_SERVER",
                     "endpoint": {
                         "service_host": "localhost",
                         "service_port": 9000,
                         "type": "REST"
                     },
-                    "modelUri": "gs://seldon-models/sklearn/iris",
+                    "modelUri": "gs://seldon-models/xgboost/iris",
                     "logger": {
                         "mode": "all"
                     }
@@ -31,13 +32,13 @@
                 "componentSpecs": [
                     {
                         "metadata": {
-                            "creationTimestamp": "2020-10-22T22:05:19Z"
+                            "creationTimestamp": "2020-10-22T22:10:10Z"
                         },
                         "spec": {
                             "containers": [
                                 {
                                     "name": "tc-sklearn-test-container",
-                                    "image": "seldonio/sklearnserver_rest:1.2.3",
+                                    "image": "seldonio/xgboostserver_rest:1.2.3",
                                     "ports": [
                                         {
                                             "name": "metrics",
@@ -45,16 +46,7 @@
                                             "protocol": "TCP"
                                         }
                                     ],
-                                    "resources": {
-                                        "limits": {
-                                            "cpu": "1",
-                                            "memory": "1Gi"
-                                        },
-                                        "requests": {
-                                            "cpu": "1",
-                                            "memory": "1Gi"
-                                        }
-                                    },
+                                    "resources": {},
                                     "volumeMounts": [
                                         {
                                             "name": "seldon-podinfo",
@@ -72,43 +64,7 @@
                     "version": "default"
                 },
                 "svcOrchSpec": {},
-                "traffic": 90
-            },
-            {
-                "name": "canary",
-                "graph": {
-                    "name": "tc-sklearn-test-container",
-                    "implementation": "XGBOOST_SERVER",
-                    "endpoint": {
-                        "type": "REST"
-                    },
-                    "modelUri": "gs://seldon-models/xgboost/iris",
-                    "logger": {
-                        "mode": "all"
-                    }
-                },
-                "componentSpecs": [
-                    {
-                        "metadata": {
-                            "creationTimestamp": "2020-10-22T22:10:10Z"
-                        },
-                        "spec": {
-                            "containers": [
-                                {
-                                    "name": "tc-sklearn-test-container",
-                                    "resources": {}
-                                }
-                            ]
-                        }
-                    }
-                ],
-                "replicas": 1,
-                "annotations": {
-                    "seldon.io/canary": "true"
-                },
-                "engineResources": {},
-                "svcOrchSpec": {},
-                "traffic": 10
+                "traffic": 100
             }
         ],
         "annotations": {
