@@ -1,0 +1,44 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "metadata": {
+        "name": "note-cluster-seldon-testing",
+        "namespace": "default",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "name": "note-cluster-seldon-testing",
+        "predictors": [
+            {
+                "name": "note-cluster-seldon-testing",
+                "graph": {
+                    "name": "note-cluster-seldon-testing",
+                    "type": "MODEL",
+                    "endpoint": {
+                        "type": "REST"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": null
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "note-cluster-seldon-testing",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-engineers-harbor-seldon-poc/note-cluster-seldon-testing:v1",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {}
+            }
+        ]
+    },
+    "status": {}
+}
