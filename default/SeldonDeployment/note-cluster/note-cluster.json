@@ -27,7 +27,7 @@
                             "containers": [
                                 {
                                     "name": "note-cluster",
-                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-engineers-harbor-seldon-poc/note-cluster:v1",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-models-python/note-cluster:v1",
                                     "resources": {}
                                 }
                             ]
