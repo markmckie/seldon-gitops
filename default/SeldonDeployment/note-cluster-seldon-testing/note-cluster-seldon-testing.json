@@ -27,7 +27,7 @@
                             "containers": [
                                 {
                                     "name": "note-cluster-seldon-testing",
-                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-engineers-harbor-seldon-poc/note-cluster-seldon-testing:v1",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-engineers-harbor-seldon/note-cluster-seldon-testing:v1",
                                     "resources": {}
                                 }
                             ]
