@@ -27,13 +27,13 @@
                 "componentSpecs": [
                     {
                         "metadata": {
-                            "creationTimestamp": "2020-11-25T17:03:39Z"
+                            "creationTimestamp": "2020-11-25T17:05:27Z"
                         },
                         "spec": {
                             "containers": [
                                 {
                                     "name": "example-galileo-engineers-4-container",
-                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-engineers-harbor-seldon-poc/note-cluster-seldon-testing:v1",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-engineers-harbor-seldon-poc/note-cluster-seldon-testing@sha256:086ca490f9e66dc92b04cdcabc4ed5acae146348bc8d57f279c42fe7301d2546",
                                     "resources": {}
                                 }
                             ]
