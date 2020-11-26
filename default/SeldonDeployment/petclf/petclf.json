@@ -1,0 +1,44 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "metadata": {
+        "name": "petclf",
+        "namespace": "default",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "name": "petclf",
+        "predictors": [
+            {
+                "name": "petclf",
+                "graph": {
+                    "name": "petclf",
+                    "type": "MODEL",
+                    "endpoint": {
+                        "type": "REST"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": null
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "petclf",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-models-python/petclf:v1",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {}
+            }
+        ]
+    },
+    "status": {}
+}
