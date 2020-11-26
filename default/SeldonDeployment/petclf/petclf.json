@@ -27,7 +27,7 @@
                             "containers": [
                                 {
                                     "name": "petclf",
-                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-models-python/petclf:v1",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-engineers-harbor-seldon-poc/petclf:v1",
                                     "resources": {}
                                 }
                             ]
