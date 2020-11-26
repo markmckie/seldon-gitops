@@ -1,0 +1,56 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "metadata": {
+        "name": "example-galileo-engineers-4",
+        "namespace": "default",
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
+    },
+    "spec": {
+        "name": "example-galileo-engineers-4",
+        "predictors": [
+            {
+                "name": "default",
+                "graph": {
+                    "name": "example-galileo-engineers-4-container",
+                    "type": "MODEL",
+                    "endpoint": {
+                        "type": "REST"
+                    },
+                    "logger": {
+                        "mode": "all"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2020-11-26T09:00:30Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "example-galileo-engineers-4-container",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-models-python/note-cluster@sha256:b32a2fdba62d41f59f07d31aee09ab0ac493aa12009ae92d0fdf2a9b64ba57ca",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 100
+            }
+        ],
+        "annotations": {
+            "seldon.io/engine-seldon-log-messages-externally": "true"
+        },
+        "protocol": "seldon",
+        "transport": "rest"
+    },
+    "status": {}
+}
