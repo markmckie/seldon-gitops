@@ -1,0 +1,56 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "metadata": {
+        "name": "aw-r",
+        "namespace": "default",
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
+    },
+    "spec": {
+        "name": "aw-r",
+        "predictors": [
+            {
+                "name": "default",
+                "graph": {
+                    "name": "aw-r-container",
+                    "type": "MODEL",
+                    "endpoint": {
+                        "type": "REST"
+                    },
+                    "logger": {
+                        "mode": "all"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": "2020-12-01T18:36:05Z"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "aw-r-container",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-models-r/seldon-template@sha256:c81160c221bc7ce8bb07ecd3f9b071006346e6f8e74af58980284bedf495e61f",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {},
+                "traffic": 100
+            }
+        ],
+        "annotations": {
+            "seldon.io/engine-seldon-log-messages-externally": "true"
+        },
+        "protocol": "seldon",
+        "transport": "rest"
+    },
+    "status": {}
+}
