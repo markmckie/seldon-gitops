@@ -1,0 +1,44 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "metadata": {
+        "name": "seldon-template",
+        "namespace": "default",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "name": "seldon-template",
+        "predictors": [
+            {
+                "name": "seldon-template",
+                "graph": {
+                    "name": "seldon-template",
+                    "type": "MODEL",
+                    "endpoint": {
+                        "type": "REST"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": null
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "seldon-template",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/galileo-models-r/seldon-template:v1",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {}
+            }
+        ]
+    },
+    "status": {}
+}
