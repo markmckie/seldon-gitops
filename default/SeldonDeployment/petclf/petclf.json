@@ -58,14 +58,7 @@
                 "labels": {
                     "version": "petclf"
                 },
-                "svcOrchSpec": {},
-                "explainer": {
-                    "type": "AnchorText",
-                    "containerSpec": {
-                        "name": "",
-                        "resources": {}
-                    }
-                }
+                "svcOrchSpec": {}
             }
         ]
     },
