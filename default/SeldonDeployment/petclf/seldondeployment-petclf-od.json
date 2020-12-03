@@ -26,7 +26,7 @@
                                 "image": "seldonio/alibi-detect-server:0.0.1",
                                 "args": [
                                     "--protocol",
-                                    "tensorflow.http",
+                                    "seldon.http",
                                     "--reply_url",
                                     "http://seldon-request-logger.default",
                                     "--event_type",
