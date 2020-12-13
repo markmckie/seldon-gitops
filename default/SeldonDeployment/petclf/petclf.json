@@ -58,15 +58,7 @@
                 "labels": {
                     "version": "petclf"
                 },
-                "svcOrchSpec": {},
-                "explainer": {
-                    "type": "AnchorTabular",
-                    "modelUri": "http://minio.minio-system.svc.cluster.local:9000/explainer-clf/treeexplainer",
-                    "containerSpec": {
-                        "name": "",
-                        "resources": {}
-                    }
-                }
+                "svcOrchSpec": {}
             }
         ]
     },
