@@ -58,7 +58,15 @@
                 "labels": {
                     "version": "petclf"
                 },
-                "svcOrchSpec": {}
+                "svcOrchSpec": {},
+                "explainer": {
+                    "type": "AnchorTabular",
+                    "modelUri": "s3://s3.eu-west-2.amazonaws.com/explainer-clf/treeexplainer",
+                    "containerSpec": {
+                        "name": "",
+                        "resources": {}
+                    }
+                }
             }
         ]
     },
