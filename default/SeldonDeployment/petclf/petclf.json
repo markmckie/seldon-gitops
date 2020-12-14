@@ -58,7 +58,16 @@
                 "labels": {
                     "version": "petclf"
                 },
-                "svcOrchSpec": {}
+                "svcOrchSpec": {},
+                "explainer": {
+                    "type": "AnchorTabular",
+                    "modelUri": "s3://explainer-clf/treeexplainer",
+                    "serviceAccountName": "seldon-minio-sa",
+                    "containerSpec": {
+                        "name": "",
+                        "resources": {}
+                    }
+                }
             }
         ]
     },
