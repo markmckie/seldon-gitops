@@ -58,7 +58,21 @@
                 "labels": {
                     "version": "petclf"
                 },
-                "svcOrchSpec": {}
+                "svcOrchSpec": {},
+                "explainer": {
+                    "type": "AnchorTabular",
+                    "modelUri": "http://localhost:9000/explainer-clf",
+                    "containerSpec": {
+                        "name": "",
+                        "resources": {}
+                    },
+                    "config": {
+                        "batch_size": "100",
+                        "delta": "0.1",
+                        "tau": "0.15",
+                        "threshold": "0.95"
+                    }
+                }
             }
         ]
     },
