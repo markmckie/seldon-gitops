@@ -58,15 +58,7 @@
                 "labels": {
                     "version": "petclf"
                 },
-                "svcOrchSpec": {},
-                "explainer": {
-                    "type": "AnchorTabular",
-                    "modelUri": "s3://explainer-clf",
-                    "containerSpec": {
-                        "name": "",
-                        "resources": {}
-                    }
-                }
+                "svcOrchSpec": {}
             }
         ]
     },
