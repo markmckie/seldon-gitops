@@ -61,6 +61,7 @@
                 "svcOrchSpec": {},
                 "explainer": {
                     "type": "AnchorTabular",
+                    "envSecretRefName": "seldon-init-container-secret-test",
                     "modelUri": "s3://explainer-clf",
                     "containerSpec": {
                         "name": "",
