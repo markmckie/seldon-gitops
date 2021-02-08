@@ -1,0 +1,44 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "metadata": {
+        "name": "martin-test2",
+        "namespace": "default",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "name": "martin-test2",
+        "predictors": [
+            {
+                "name": "martin-test2",
+                "graph": {
+                    "name": "martin-test2",
+                    "type": "MODEL",
+                    "endpoint": {
+                        "type": "REST"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": null
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "martin-test2",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/data-science/seldon/py/martin-test2:4",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {}
+            }
+        ]
+    },
+    "status": {}
+}
