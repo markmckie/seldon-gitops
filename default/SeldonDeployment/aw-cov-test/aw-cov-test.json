@@ -1,0 +1,44 @@
+{
+    "kind": "SeldonDeployment",
+    "apiVersion": "machinelearning.seldon.io/v1alpha2",
+    "metadata": {
+        "name": "aw-cov-test",
+        "namespace": "default",
+        "creationTimestamp": null
+    },
+    "spec": {
+        "name": "aw-cov-test",
+        "predictors": [
+            {
+                "name": "aw-cov-test",
+                "graph": {
+                    "name": "aw-cov-test",
+                    "type": "MODEL",
+                    "endpoint": {
+                        "type": "REST"
+                    }
+                },
+                "componentSpecs": [
+                    {
+                        "metadata": {
+                            "creationTimestamp": null
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "name": "aw-cov-test",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/data-science/seldon/py/aw-cov-test:5",
+                                    "resources": {}
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "replicas": 1,
+                "engineResources": {},
+                "svcOrchSpec": {}
+            }
+        ]
+    },
+    "status": {}
+}
