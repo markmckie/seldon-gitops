@@ -27,7 +27,7 @@
                             "containers": [
                                 {
                                     "name": "aw-cov-test",
-                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/data-science/seldon/py/aw-cov-test:6",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/data-science/seldon/py/aw-cov-test:7",
                                     "resources": {}
                                 }
                             ]
