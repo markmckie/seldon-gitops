@@ -27,7 +27,7 @@
                             "containers": [
                                 {
                                     "name": "claims-predict",
-                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/data-science/seldon/py/claims-predict:76a3fec4",
+                                    "image": "harbor.k8s-tools.digital.coveahosted.co.uk/data-science/seldon/py/claims-predict:80a49ee5",
                                     "resources": {}
                                 }
                             ]
