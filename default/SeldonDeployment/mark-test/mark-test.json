@@ -49,7 +49,7 @@
                         }
                     }
                 ],
-                "replicas": 10,
+                "replicas": 5,
                 "engineResources": {},
                 "svcOrchSpec": {},
                 "traffic": 100
